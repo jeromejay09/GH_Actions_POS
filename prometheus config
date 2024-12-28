@@ -1,0 +1,21 @@
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+kubectl create ns monitoring
+helm install monitoring prometheus-community/kube-prometheus-stack -n monitoring
+kubectl get all -n monitoring
+kubectl port-forward service/monitoring-kube-prometheus-prometheus -n monitoring 9090:9090 &
+
+127.0.0.1:9090
+
+kubectl port-forward service/monitoring-grafana -n monitoring 8080:80 &
+
+1. eksctl create cluster
+2. set the tag in public subnet
+3. allow iam policies
+4. allow ports in security group, instance, cluster, subnet, loadbalancer
+5. create the load balancer
+6. apply the deployment
+
+kubectl run curl-test --image=radial/busyboxplus:curl -i -tty --rm
+
+aws sts get-caller-identity
