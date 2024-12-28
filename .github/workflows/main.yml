@@ -1,0 +1,18 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+    
+jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-22.04test
+
+    steps:
+      - name: Echo
+        run: Echo "Hello Jerome"
