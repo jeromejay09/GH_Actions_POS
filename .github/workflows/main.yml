@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: Echo
-        run: Echo "Hello Jerome"
+        run: echo "Hello Jerome"
